@@ -1,0 +1,6 @@
+name: libnosql
+version: 1.0.0
+antigen: libnosql
+api: [3.0.0]
+php: [7.2]
+author: AkmalFairuz
