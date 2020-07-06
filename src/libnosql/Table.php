@@ -52,7 +52,8 @@ class Table
     public function getString(string $key): ?string
     {
         $val = $this->getValue($key);
-        return ((string)$val) ?? null;
+        if($val === null) return null;
+        return (string)$val;
     }
 
     /**
@@ -90,6 +91,7 @@ class Table
     public function getObject(string $key): ?object
     {
         $val = $this->getValue($key);
+        if($val === null) return null;
         $val = unserialize($val);
         if ($val === false) {
             return null;
@@ -104,7 +106,8 @@ class Table
     public function getInt(string $key): ?int
     {
         $val = $this->getValue($key);
-        return ((int)$val) ?? null;
+        if($val === null) return null;
+        return (int)$val;
     }
 
     /**
@@ -114,7 +117,8 @@ class Table
     public function getFloat(string $key): ?float
     {
         $val = $this->getValue($key);
-        return ((float)$val) ?? null;
+        if($val === null) return null;
+        return (float)$val;
     }
 
     /**
